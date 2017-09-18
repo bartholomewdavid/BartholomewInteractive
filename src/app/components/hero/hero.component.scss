@@ -1,0 +1,56 @@
+@import "../../../vars";
+
+.hero {
+    position: relative;
+    @include white-font();
+    display: flex;
+    flex-flow: center;
+    justify-content: center;
+    align-items: center;
+    background: $peach;
+
+    @media (max-width: 640px) {
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+}
+
+.content-container {
+    margin: auto;
+    z-index: 10;
+}
+
+.content-container__image {
+    width: 100%;
+    text-align: center;
+}
+
+.bartholomew {
+    display: inline-block;
+    width: 256px;
+    height: 256px;
+    border-radius: 100%;
+    background-color: rgba(255,255,255,0.5);
+    background-image: url("../../../assets/images/david.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content-container__description {
+    width: 100%;
+    max-width: 628px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 1em;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

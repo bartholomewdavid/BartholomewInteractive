@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: #fafafa;
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+  font-size: 18px;
+}
+
+a {
+  color: #fafafa;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding-top: 8em;
+  padding-bottom: 8em;
+  box-sizing: border-box;
+  min-height: 400px;
+  text-align: center;
+  box-shadow: inset 0px 1px 3px #adadad;
+
+  @media (max-width: 640px) {
+      padding-top: 4em;
+      padding-bottom: 4em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+  }
+}
+
+section .title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}

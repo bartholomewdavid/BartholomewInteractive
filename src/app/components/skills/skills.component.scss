@@ -1,0 +1,44 @@
+@import "../../../vars";
+
+.skills {
+    color: #333;
+}
+
+.skills__tray__item {
+    background: $peach;
+}
+
+.skills__description {
+    margin-bottom: 1em;
+}
+
+.skills__tray {
+    margin-top: 1em;
+    text-align: center;
+    color: #fafafa;
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+}
+
+.skills__tray .skills__tray__item {
+    position: relative;
+    width: 256px;
+    height: 256px;
+    display: inline-block;
+    border-radius: 100%;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+}
+
+.skills__tray .skills__tray__item i {
+    display: block;
+    font-size: 64px;
+    margin-top: 64px;
+}
+
+.skills__tray .skills__tray__item span {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 0.25em;
+}

@@ -1,0 +1,126 @@
+@import '../../../vars';
+
+.brands {
+    @include white-font();
+    background-color: $peach;
+}
+
+.brands__description {
+    margin-bottom: 1em;
+}
+
+.brands__tray {
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    max-width: 864px;
+    letter-spacing: 0;
+
+    @media (max-width: 864px) {
+        max-width: 576px;
+    }
+
+    @media (max-width: 576px) {
+        max-width: 288px;
+    }
+}
+
+.brands__tray__item {
+    position: relative;
+    width: 256px;
+    height: 256px;
+    display: inline-block;
+    background: #fafafa;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1.5em;
+}
+
+.brands__tray__item img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -82px;
+    margin-left: -82px;
+    width: 164px;
+    height: 164px;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    transition: all 0.15s linear;
+    object-fit: contain;
+    object-position: center center;
+
+    &:hover {
+        filter: grayscale(0%);
+        -webkit-filter: grayscale(0%);
+        -moz-filter: grayscale(0%);
+        -ms-filter: grayscale(0%);
+    }
+}
+
+.technology__title {
+    margin-top: 4em;
+}
+
+.technology__tray {
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    max-width: 856px;
+    letter-spacing: 0px;
+
+    @media (max-width: 856px) {
+        max-width: 642px;
+    }
+
+    @media (max-width: 642px) {
+        max-width: 396px;
+    }
+}
+
+.technology__tray__item {
+    position: relative;
+    display: inline-flex;
+    width: 182px;
+    height: 182px;
+    background: #fafafa;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1.5em;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+
+    @media (max-width: 640px) {
+        width: calc(50% - 1em);
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+}
+
+.technology__tray__item img {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(100% - 2em);
+    max-height: calc(100% - 2em);
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    transition: all 0.15s linear;
+    object-fit: contain;
+    object-position: center center;
+}
+
+.technology__tray__item img:hover {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+  }
