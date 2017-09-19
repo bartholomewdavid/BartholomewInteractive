@@ -4,9 +4,7 @@
     padding-bottom: 0;
 }
 
-.contact__email,
-.contact__phone,
-.contact__linkedin {
+.contact__line {
     display: block;
     width: 400px;
     margin: 0 auto 0.25em auto;
@@ -14,25 +12,19 @@
     text-align: left;
 }
 
-.contact__email span:nth-of-type(1),
-.contact__phone span:nth-of-type(1),
-.contact__linkedin span:nth-of-type(1) {
+.contact__line span:nth-of-type(1) {
     display: inline-block;
     width: 100px;
     text-align: left;
     color: #e1e1e1;
 }
 
-.contact__email span:nth-of-type(2),
-.contact__phone span:nth-of-type(2),
-.contact__linkedin span:nth-of-type(2) {
+.contact__line span:nth-of-type(2) {
     display: inline-block;
     transition: color 0.3s ease-in;
 }
 
-.contact__email span:nth-of-type(2):hover,
-.contact__phone span:nth-of-type(2):hover,
-.contact__linkedin span:nth-of-type(2):hover {
+.contact__line span:nth-of-type(2):hover {
     text-decoration: underline;
     color: #fff;
 }
