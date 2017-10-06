@@ -47,13 +47,13 @@ export class BackDropDirective {
     private domRenderer: Renderer) { }
 
   initScene() {
-    // Scene
+    // Scene and clear color
     this.scene = new Scene();
     this.scene.background = 0xFFFFFF;
   }
 
   initCamera() {
-    // Camera
+    // Camera for the user
     this.camera = new PerspectiveCamera(
       75,
       this.SCREEN_WIDTH / this.SCREEN_HEIGHT,
@@ -69,6 +69,7 @@ export class BackDropDirective {
   }
 
   initLights() {
+    // Set up all lights to create interesting shadows.
     // Ambient Light
     this.ambLight = new AmbientLight(0xFFFFFF, 0.5) // soft white light
     this.ambLight.position.set(0, 0, 0);
@@ -125,6 +126,8 @@ export class BackDropDirective {
       new CylinderGeometry(2, 2, .5, 8),
       new CylinderGeometry(3, 3, .5, 8)
     ]
+
+    // Materials should be invisible, we want the shadows only
     const particleMat = new MeshPhongMaterial({
       color: 0x00FFFF,
       transparent: true,
@@ -132,8 +135,10 @@ export class BackDropDirective {
     })
     particleMat.needsUpdate = true
 
+    // Randomize the attributes of all meshes
     for (let j = 0; j < 3; j++) {
       for (let i = 0; i < 5; i++) {
+        // Create mesh and set up shadows
         const particle = new Mesh(
           particleGeo[1],
           particleMat
@@ -143,10 +148,13 @@ export class BackDropDirective {
         particle.needsUpdate = true
         particle.position.y = (j * 5) + 10;
 
+        // Set the movement to a random range to make things look less uniform
         particle.movement = {
           x: Math.random() * .01 + 0.03,
           z: Math.random() * .001 + 0.015
         }
+
+        // Create and cache reset positions for performance.
         particle.resetPosition = (initial: Boolean) => {
           if (!initial) {
             particle.position.x = this.box.min.x + (Math.random() * 4)
@@ -156,6 +164,8 @@ export class BackDropDirective {
             particle.position.z = this.box.min.z + (Math.random() * (this.SCENE_HEIGHT * this.HEIGHT_MULTIPLIER))
           }
         }
+
+        // Create the update function for the `particles`
         particle.update = () => {
           const { position } = particle;
           const onScreen = this.box.containsPoint(position)
@@ -167,6 +177,7 @@ export class BackDropDirective {
           }
         }
 
+        // Set initial position, add particles to scene and store reference
         particle.resetPosition(true)
         this.entities.push(particle)
         this.scene.add(particle)
@@ -223,6 +234,7 @@ export class BackDropDirective {
   }
 
   initControls() {
+    // Add development tools
     if (this.DEV) {
       this.controls = new OrbitControls(this.camera, this.renderer.domElement);
       this.controls.target.set(0, 2, 0);
@@ -242,6 +254,7 @@ export class BackDropDirective {
   }
 
   renderCanvas() {
+    // Update all particles each loop
     this.renderer.render(this.scene, this.camera);
 
     this.entities.forEach(function (ent) {
@@ -252,6 +265,7 @@ export class BackDropDirective {
   }
 
   resize() {
+    // Resize the canvas, adjust camera perspective
     this.SCREEN_WIDTH = window.innerWidth;
     this.SCREEN_HEIGHT = window.innerHeight;
 
